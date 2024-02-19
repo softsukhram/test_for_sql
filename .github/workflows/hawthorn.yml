@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Test Output
-      run: echo "Here is a test"
+      run: |
+        echo "PREX=true" >> $env:GITHUB_ENV
   connect-remote:
     runs-on: ubuntu-latest
     steps:
