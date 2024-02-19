@@ -22,7 +22,7 @@ jobs:
     - name: Show databases
       run: mysql -h 127.0.0.1 --port 3306 -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e "SHOW DATABASES";
     - name: Run a sample SQL
-      run: mysql -h 127.0.0.1 --port 3306 -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e "source sample_for_action.sql"
+      run: mysql -h 127.0.0.1 --port 3306 -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e "source test_for_sql/hawthorn_script.sql"
   connect-remote:
     runs-on: ubuntu-latest
     env:
@@ -34,4 +34,4 @@ jobs:
     - name: Show remote databases
       run: mysql -h ${{ secrets.DB_HOSTNAME }} --port 3306 -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e "SHOW DATABASES";
     - name: Run a sample SQL on remote
-      run: mysql -h ${{ secrets.DB_HOSTNAME }} --port 3306 -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e "source sample_for_action.sql"
+      run: mysql -h ${{ secrets.DB_HOSTNAME }} --port 3306 -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} -e "source test_for_sql/hawthorn_script.sql"
