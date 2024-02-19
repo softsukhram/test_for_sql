@@ -1,5 +1,5 @@
-name: hawthorn
-run-name: Setting up the Hawthorn database
+name: shape_devel
+run-name: Setting up the shape_devel database
 on: [push]
 jobs:
   test-output:
